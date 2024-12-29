@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>I Love You</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <style>
+      #No {
+        z-index: 10;
+        position: absolute;
+        transition: all 0.3s;
+        height: 20px;
+        width: 40px;
+      }
+
+      #yes-btn {
+        background-color: #79305a;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        font-size: 25px;
+        height: fit-content;
+        width: fit-content;
+        border: none;
+        z-index: 10;
+        position: absolute;
+        color: white;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 2px;
+      }
+
+      #no-btn {
+        background-color: #79305a;
+        font-size: 20px;
+        color: white;
+        height: fit-content;
+        width: fit-content;
+        border: none;
+        border-radius: 2px;
+      }
+
+      .title {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        font-size: 46px;
+      }
+
+      .btn-con {
+        padding: 30px;
+        width: max-content;
+        vertical-align: middle;
+        display: inline-block;
+      }
+
+      * {
+        text-align: center;
+      }
+
+      body {
+        background-image: url("bg.gif");
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <h1 class="title">Làm người yêu anh nhé Hương</h1>
+      <img src="yes.gif" />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <div id="Yes" class="btn-con" data-toggle="modal" data-target="#myModal">
+        <button type="button" id="yes-btn">đồng ý</button>
+      </div>
+      <br />
+      <br />
+      <div id="No" class="btn-con">
+        <button type="button" id="no-btn">hông</button>
+      </div>
+      <br />
+
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+              <h4 class="modal-title">Yêu Hương nhiềuuuuuu</h4>
+            </div>
+            <img src="kiss.gif" style="width: 100%" />
+            <div class="modal-body">
+              <p class="title">Anh yêu em</p>
+              <p class="title">Anh yêu Quỳnh Hương nhất</p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-default"
+                data-dismiss="modal"
+              >
+                Đóng lại nè
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script src="script.js"></script>
+    </main>
+
+    <script>
+      const yes = document.getElementById("Yes");
+      const no = document.getElementById("No");
+      const noBtn = document.getElementById("no-btn");
+      const yesBtn = document.getElementById("yes-btn");
+      let count = 0;
+
+      const action = () => {
+        count++;
+        const x = Math.floor(Math.random() * (window.innerWidth - 150));
+        const y = Math.floor(Math.random() * (window.innerHeight - 150));
+
+        no.style.left = `${x}px`;
+        no.style.top = `${y}px`;
+
+        // noBtn.style.height = `${20 + count}px`;
+        // noBtn.style.width = `${40 + count}px`;
+
+        yesBtn.style.fontSize = `${25 + count}px`;
+        yes.style.left = "50%";
+      };
+
+      no.addEventListener("mouseover", action);
+      no.addEventListener("mouseenter", action);
+      no.addEventListener("mousedown", action);
+    </script>
+  </body>
+</html>
